@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Esfera</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Calcular Propriedades da Esfera</h1>
+    <button onclick="calcularEsfera()">Calcular</button>
+
+    <div id="resultados">
+    </div>
+
+    <script>
+        function calcularEsfera() {
+            const raio = parseFloat(prompt("Digite o raio da esfera:"));
+            if (isNaN(raio) || raio <= 0) {
+                alert("Raio inválido!");
+                return;
+            }
+
+            const pi = Math.PI;
+            const comprimento = 2 * pi * raio;
+            const area = pi * raio * raio;
+            const volume = (4 / 3) * pi * raio * raio * raio;
+
+            document.getElementById("resultados").innerHTML = `
+                <p>Comprimento: ${comprimento.toFixed(2)}</p>
+                <p>Área: ${area.toFixed(2)}</p>
+                <p>Volume: ${volume.toFixed(2)}</p>
+            `;
+        }
+    </script>
+
+    <img src="escudo_galo-removebg-preview.png" alt="Escudo do Maior de Minas">
+</body>
+</html>
